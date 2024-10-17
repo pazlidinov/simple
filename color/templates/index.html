@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>LOGO</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .full-page {
+            height: 65vh;
+            background-color: light;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-light bg-primary ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- main start -->
+    <div class="card text-center">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body mt-5 full-page justify-content-center align-items-center">
+            <h4 class="card-title">Создать картинку по номерам</h4>
+            <p class="card-text">Выберите нужное изображение, нажав кнопку.</p>
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-sm-12 col-md-6">
+                        <form action="{% url 'main_app:modified' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input class="form-control " type="file" id="formFile" accept="image/*" name="image">
+                            <div class="mb-3">
+                                <label for="exampleNumber" class="form-label">Выберите нужное изображение</label>
+                                <input type="number" name="num_clusters" class="form-control" id="exampleNumber" placeholder="0" min="5" value="5">
+                              </div>
+                            <button class="btn btn-primary mt-3" type="submit">Редактирование</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+    </div>
+    <!-- main end -->
+    <!-- footer star -->
+    <footer class="footer text-center bg-primary p-4 bg-base-300 text-base-content">
+        <div>
+            <p>Copyright © 2024 - All right reserved by LOGO</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+
+</body>
+
+</html>

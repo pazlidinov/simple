@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>LOGO</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .full-page {
+            height: 70vh;
+            background-color: light;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-light bg-primary ">
+        <div class="container-fluid text-center">
+            <a class="navbar-brand" href="{% url 'main_app:home' %}">LOGO</a>
+        </div>
+    </nav>
+    <!-- navbar end -->
+    <!-- main start -->
+    <div class="card-group">
+        <div class="card mb-3 text-center mt-5 full-page justify-content-center align-items-center">
+            <img src="{{ object.image.url }}" class="card-img-top w-50 h-75" alt="{{ object.image.url }}">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-sm-12 col-md-6 ">
+                        <a class="btn btn-primary fs-3 mt-3" href="{{ object.image.url }}"
+                            download="{{ object.image.url }}">Загрузить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3 text-center mt-5 full-page justify-content-center align-items-center">
+            <img src="{{ object.modified_image.url }}" class="card-img-top w-50 h-75"
+                alt="{{ object.modified_image.url }}">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-sm-12 col-md-6 ">
+                        <a class="btn btn-primary fs-3 mt-3" href="{{ object.all_files.url }}"
+                            download="{{ object.all_files.url }}">Загрузить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer class="footer text-center bg-primary p-4 bg-base-300 text-base-content">
+        <div>
+            <p>Copyright © 2024 - All right reserved by LOGO</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
